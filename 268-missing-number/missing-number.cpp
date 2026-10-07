@@ -1,26 +1,14 @@
 class Solution {
 public:
-    int missingNumber(vector<int>& arr) {
-        //brute force
-        for(int i = 0; i <= arr.size(); i++ ){
-            bool flag = 0;
-            for(int j = 0 ; j < arr.size(); j++){
-                if(arr[j] == i){
-                    flag = 1;
-                    break;
-                }
-                
-                
-
-            }
-            if( flag == 0){
-                return i;
-            }
-            
+    int missingNumber(vector<int>& nums) {
+        int n = nums.size();
+        int Asum = (n*(n+1))/2;
+        int sum = 0;
+        for(int i = 0 ; i < nums.size(); i++){
+            sum += nums[i];
 
         }
-        return -1;
-        
+        return (Asum - sum);
         
     }
 };
